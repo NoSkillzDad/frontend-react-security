@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from "react";
+import React, {createContext, useState} from "react";
 
 export const AuthContext = createContext({});
 
@@ -7,11 +7,11 @@ const AuthContextProvider = ({children}) => {
     const [isAuth, toggleIsAuth] = useState(false);
 
     const logout = () => {
-      toggleIsAuth(false);
+        toggleIsAuth(false);
     }
 
     const login = () => {
-      toggleIsAuth(true);
+        toggleIsAuth(true);
     }
 
     const logData = {

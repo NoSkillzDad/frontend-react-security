@@ -15,6 +15,12 @@ function NavBar() {
               <>
                   <button
                       type="button"
+                      onClick={() => history.push('/profile')}
+                  >
+                      Mijn profile
+                  </button>
+                  <button
+                      type="button"
                       onClick={logoutFunction}
                   >
                       Logout

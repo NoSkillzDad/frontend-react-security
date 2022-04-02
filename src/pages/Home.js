@@ -1,12 +1,7 @@
-import React, {useContext, useEffect} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Home() {
-
- // const {logged} = useContext(AuthContext);
-
-  // console.log(logged.toString());
-
   return (
     <>
       <h1>Homepagina</h1>

@@ -8,9 +8,6 @@ function SignIn() {
 
     const renderLogin = (islogged) => {
 
-        console.log(islogged.toString());
-        console.log(logged.toString());
-
       return (
           islogged ? (
               <>
