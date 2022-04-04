@@ -1,9 +1,51 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import logo from '../assets/banana-01.png';
 import { useHistory, Link } from 'react-router-dom';
+import {AuthContext} from "../context/AuthContext";
 
 function NavBar() {
   const history = useHistory();
+
+  const {logged, logoutFunction, user : {email}} = useContext(AuthContext);
+
+  const renderLoginStatus = (isLogged) => {
+
+      return (
+          isLogged ? (
+              <> {email}
+                  <button
+                      type="button"
+                      onClick={() => history.push('/profile')}
+                  >
+                      Mijn profiel
+                  </button>
+                  <button
+                      type="button"
+                      onClick={logoutFunction}
+                  >
+                      Logout
+                  </button>
+
+              </>
+          ) : (
+              <>
+                  <button
+                      type="button"
+                      onClick={() => history.push('/signin')}
+                  >
+                      Log in
+                  </button>
+                  <button
+                      type="button"
+                      onClick={() => history.push('/signup')}
+                  >
+                      Registreren
+                  </button>
+              </>
+          )
+      )
+
+  }
 
   return (
     <nav>
@@ -17,18 +59,7 @@ function NavBar() {
         </Link>
 
       <div>
-        <button
-          type="button"
-          onClick={() => history.push('/signin')}
-        >
-          Log in
-        </button>
-        <button
-          type="button"
-          onClick={() => history.push('/signup')}
-        >
-          Registreren
-        </button>
+          {renderLoginStatus(logged)}
       </div>
     </nav>
   );

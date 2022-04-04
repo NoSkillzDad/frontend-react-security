@@ -102,3 +102,5 @@ Als je niet zo goed weet waar je moet beginnen, kun je onderstaand stappenplan v
 * Zorg er dan nu voor dat het _emailadres_ wordt meegegeven bij het aanroepen van de login functie vanuit `SignIn.js`
 * Zorg ervoor dat er in het custom Provider-component voor gezorgd wordt dat dat emailadres wordt opgeslagen onder `user` in de state.
 * Laat, als er een gebruiker is ingelogd, het emailadres zien in de navigatie.
+
+[GitHub Repo](https://github.com/hogeschoolnovi/frontend-react-banana-security)
