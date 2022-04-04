@@ -5,19 +5,24 @@ export const AuthContext = createContext({});
 const AuthContextProvider = ({children}) => {
 
     const [isAuth, toggleIsAuth] = useState(false);
+    const [userCred, setUserCred] = useState({
+        name: '',
+        email: ''
+    });
 
     const logout = () => {
         toggleIsAuth(false);
+        setUserCred({name: '', email: ''});
     }
 
-    const login = () => {
+    const login = (name, email) => {
         toggleIsAuth(true);
+        setUserCred({name: name, email: email});
     }
 
     const logData = {
         logged: isAuth,
-        name: '',
-        email: '',
+        user: userCred,
         logoutFunction: logout,
         loginFunction: login
     }

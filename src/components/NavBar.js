@@ -6,18 +6,18 @@ import {AuthContext} from "../context/AuthContext";
 function NavBar() {
   const history = useHistory();
 
-  const {logged, logoutFunction} = useContext(AuthContext);
+  const {logged, logoutFunction, user : {email}} = useContext(AuthContext);
 
   const renderLoginStatus = (isLogged) => {
 
       return (
           isLogged ? (
-              <>
+              <> {email}
                   <button
                       type="button"
                       onClick={() => history.push('/profile')}
                   >
-                      Mijn profile
+                      Mijn profiel
                   </button>
                   <button
                       type="button"
